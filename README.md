@@ -18,6 +18,6 @@ Du ska bygga en webbapp där du kan beställa kaffe och få den levererad via dr
 **För att Väl Godkänt ska du:**
 * Återkommer
 
-Inlämning via Learnpoint och Github.
+Inlämning via Learnpoint och Github med ert gruppnamn som repo-namn.
 
 **Deadline:** 1/4 23:59
