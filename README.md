@@ -26,6 +26,6 @@ Du ska bygga en webbapp där du kan beställa kaffe och få den levererad via dr
 * Göra applikationen säkrare genom att lägga till lösenord på användaren
 * Authentication ska ske med hjälp av JWT
 
-Inlämning via Learnpoint och Github med ert gruppnamn som repo-namn.
+Inlämning via ITHSDistans och Github med ert gruppnamn som repo-namn.
 
-**Deadline:** 1/4 23:59
+**Deadline:** 1/6 23:59
