@@ -6,6 +6,20 @@ Du ska bygga en webbapp där du kan beställa kaffe och få den levererad via dr
 
 ## Instruktioner
 
+### Arbetssätt
+Arbetet ska ske enligt en komprimerad variant på scrum i 2st sprintar där varje spring är en dag. 
+Varje sprint ska bestå av: 
+
+* en sprintplanering med estimering och ska mynna ut i en sprintbacklog
+* ett "daily scrum" i mitten där ni samlas och svarar på de tre frågorna
+* en sprint review i slutet med ett demo
+* en sprint retrospective
+
+Varje sådant möte skall vara inspelat och lämnas in i ITHSDistans.
+
+
+### Kravspecifikation
+
 **För att få Godkänt ska ni:**
 * Gjort enligt Figma skissen
 * Är en single file application (SPA) med vue-router
