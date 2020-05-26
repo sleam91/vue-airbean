@@ -28,10 +28,10 @@ Skapa en trelloboard enligt templaten "Agile Sprint Board".
 * Använder sig av Vuex med en Vuex store
 * Gå att lägga till produkter i en varukorg
 * I varukorgen ändra antal/ta bort produkter
-* Hämta alla produkter med fetch
 * Kunna skicka sin order och få ett svar med en ETA och ordernummer
 
 **För att Väl Godkänt ska ni:**
+* Hämta alla produkter med fetch
 * Bygga ett API för applikationen
 * Integrera API:et med SPAn
 * Lägga till en profilsida där du kan skapa konto/logga in (enbart namn och email)
