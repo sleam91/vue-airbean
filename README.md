@@ -17,6 +17,8 @@ Varje sprint ska bestå av:
 
 Varje sådant möte skall vara inspelat och lämnas in i ITHSDistans.
 
+Skapa en trelloboard enligt templaten "Agile Sprint Board".
+
 
 ### Kravspecifikation
 
