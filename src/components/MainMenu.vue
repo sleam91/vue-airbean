@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
 .mainMenu {
     z-index: 10;
     position: absolute;
