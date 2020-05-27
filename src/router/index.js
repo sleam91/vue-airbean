@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Landing from '@/views/Landing.vue'
-import Cart from '@/views/Cart.vue'
-import Menu from '@/views/Menu.vue'
-import Profile from '@/view/Profile'
-import Status from '@/view/Status'
-import About from '@/view/About'
+import Landing from '@/views/Landing'
+import Cart from '@/views/Cart'
+import Menu from '@/views/Menu'
+import Profile from '@/views/Profile'
+import Status from '@/views/Status'
+import About from '@/views/About'
 
 Vue.use(VueRouter)
 
