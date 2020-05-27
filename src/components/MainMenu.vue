@@ -1,22 +1,27 @@
 <template>
-  <div class="mainMenu" v-bind:class="{ noDisplay : !display}" >
-      <button class="exit" v-on:click="$emit('close-menu')">
-      </button>
-      <h3>Meny</h3>
-      <p>___________________</p>
-      <h3>Vårt kaffe</h3>
-      <p>___________________</p>
-      <h3>Min profil</h3>
-      <p>___________________</p>
-      <h3>Orderstatus</h3>
+  <div class="mainMenu">
+        <button type="button" class="exit" v-on:click="$emit('close-menu')">
+        </button>
+        <router-link :to="'/menu'">
+            <h3>Meny</h3>
+        </router-link>
+         <p>______________________</p>
+        <router-link :to="'/about'">
+            <h3>Vårt kaffe</h3>
+        </router-link>
+        <p>______________________</p>
+        <router-link :to="'/profile'">
+            <h3>Min profil</h3>
+        </router-link>
+        <p>______________________</p>
+        <router-link :to="'/status'">
+            <h3>Orderstatus</h3>
+        </router-link>
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        display: Boolean
-    }
 }
 </script>
 
@@ -39,6 +44,7 @@ export default {
         font-size: 0.1rem;
     }
     p, h3 {
+        color: white;
         margin: 0.3rem;
     }
 
@@ -59,8 +65,21 @@ export default {
     background-color: white;
     border: none;
     border-radius: 50%;
+    outline: none;
 }
-.noDisplay {
-    display: none;
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
 </style>
