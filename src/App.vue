@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-body {
+  body {
     margin: 0;
     #app{
       width:100vw
