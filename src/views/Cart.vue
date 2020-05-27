@@ -1,13 +1,13 @@
 <template>
 
-  <div class="about">
+  <div class="cart">
   </div>
 
 </template>
 
 <script>
 export default {
-  name: 'About',
+  name: 'Cart',
 
   
 }
