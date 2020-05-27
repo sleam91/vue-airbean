@@ -1,6 +1,6 @@
 <template>
-  <div class="mainMenu">
-      <button class="exit">
+  <div class="mainMenu" v-bind:class="{ noDisplay : !display}" >
+      <button class="exit" v-on:click="$emit('close-menu')">
       </button>
       <h3>Meny</h3>
       <p>___________________</p>
@@ -14,6 +14,9 @@
 
 <script>
 export default {
+    props: {
+        display: Boolean
+    }
 }
 </script>
 
@@ -56,5 +59,8 @@ export default {
     background-color: white;
     border: none;
     border-radius: 50%;
+}
+.noDisplay {
+    display: none;
 }
 </style>
