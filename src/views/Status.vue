@@ -36,10 +36,10 @@ export default {
   }),
   computed: {
     orderNo() {
-      return this.$store.state.order.orderNo;
+      return this.$store.state.awaitedOrder.orderNo;
     },
     eta() {
-      return this.$store.state.order.eta;
+      return this.$store.state.awaitedOrder.eta;
       // return Math.floor(Math.random()*30)
       //move to store
     }, 

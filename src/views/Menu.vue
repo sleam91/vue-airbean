@@ -1,8 +1,7 @@
 <template>
   <div class="menu">
-    <top/>
-    <shopping-basket-button/>
-    <div class="center">
+      <top/>
+      <shopping-basket-button/>
       <h3>Meny</h3>
       <ul>
         <coffee-menu-item v-for='singleItem in getCoffeeItems'
@@ -10,8 +9,7 @@
                           :menuItem="singleItem"
         />   
       </ul>
-    </div>
-    <bottom/>
+      <bottom/>
   </div>
 </template>
 
@@ -42,6 +40,7 @@ export default {
 
 <style scoped lang="scss">
 .menu {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
