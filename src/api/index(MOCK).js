@@ -32,7 +32,7 @@ function addOrderToUser(order,email){
 }
 
 function getHighestOrderNo(){
-    let highestOrderNo= 99
+    let highestOrderNo= 9999
     return highestOrderNo
 }
 
