@@ -10,7 +10,7 @@
             <p v-if="orderList.length==0">Inga beställningar!</p>
             <article class="order" v-for="order in orderList" :key="order.orderNo">
                 <div class="number-date">
-                    <h3>{{order.orderNo}}</h3>
+                    <h3>{{'#AB'+order.orderNo+'Z'}}</h3>
                     <p>{{order.date}}</p>
                 </div>
                 <div class="order-total">
