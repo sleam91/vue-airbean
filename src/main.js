@@ -10,6 +10,7 @@ new Vue({
   store,
   async created(){
     await this.$store.dispatch('getMenuItems')
+    await this.$store.dispatch('getHighestOrderNo')
   },
   render: h => h(App)
 }).$mount('#app')

@@ -4,7 +4,7 @@
     <div class="status-content">
       <div v-if="eta" class="orderNo">
         <p>{{numberTitle}}</p>
-        <p class="bold">{{orderNo}} </p>
+        <p class="bold">{{'#AB'+orderNo+'Z'}} </p>
       </div>
       <img src="../assets/graphics/drone.svg" alt="Drone">
       <h1 v-if="eta">{{title}}</h1>
