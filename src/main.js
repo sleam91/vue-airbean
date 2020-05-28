@@ -9,7 +9,7 @@ new Vue({
   router,
   store,
   created(){
-    // this.$store.dispatch('getMenuItems')
+    this.$store.dispatch('getMenuItems')
   },
   render: h => h(App)
 }).$mount('#app')
