@@ -16,7 +16,25 @@ export default new Vuex.Store({
       name: "",
       email: "",
       id: "",
-      listOfOrders: [],
+      listOfOrders: [        {
+        orderNo: "12312",
+        date: "21/05/12",
+        items: [],
+        eta: "",
+        total:443,
+      },{
+        orderNo: "2222",
+        date: "21/05/13",
+        items: [],
+        eta: "",
+        total:333,
+      },{
+        orderNo: "3333",
+        date: "21/05/14",
+        items: [],
+        eta: "",
+        total:893,
+      },],
     },
     menu:[
       {"id":1,"title":"Bryggkaffe","desc":"Bryggd på månadens bönor.","price":39},

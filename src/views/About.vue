@@ -43,7 +43,11 @@ export default {
 <style scoped lang="scss">
   div.about {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #F3E4E1;
+    min-height: 100vh;
     h1 {
       font-family: 'PT Serif';
     }
