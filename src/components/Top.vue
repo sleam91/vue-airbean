@@ -1,11 +1,17 @@
 <template>
   <div class="top">
+    <menu-button/>
   </div>
 </template>
 
 <script>
+import MenuButton from '@/components/MenuButton'
+
 export default {
   name: 'Top', 
+  components: {
+    MenuButton
+  },
 }
 </script>
 
