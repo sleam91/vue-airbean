@@ -44,13 +44,12 @@ export default {
         };
     },
     methods: {
-        submit() {
+        async submit() {
             this.noNameInput = false;
             this.noEmailInput = false;
             this.noGPDRChecked = false;
             if (this.name && this.email && this.checked) {
-                this.$store.state.user.name = this.name;
-                this.$store.state.user.email = this.email;
+                await this.$store.dispatch("loginUser", this.$store.state.user);
                 this.$store.state.loggedIn = true;
             } else {
                 if (!this.name) {

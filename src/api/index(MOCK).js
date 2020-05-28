@@ -36,5 +36,9 @@ function getHighestOrderNo(){
     return highestOrderNo
 }
 
+function loginUser(user){
+    return user
+}
 
-export default { getMenuItems, addOrderToUser,getHighestOrderNo};
+
+export default { getMenuItems, addOrderToUser,getHighestOrderNo,loginUser};
