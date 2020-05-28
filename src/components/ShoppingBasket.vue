@@ -41,9 +41,9 @@ export default {
         }
     },
     methods: {
-        makeOrder() {
+        async makeOrder() {
             this.$store.state.order.total = this.getSum
-            this.$store.dispatch('addOrderToUser')
+            await this.$store.dispatch('addOrderToUser')
             this.$router.push('/status')
         }
     }
