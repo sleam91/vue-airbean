@@ -45,6 +45,9 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    addItemToBasket(state, itemToAdd) {
+      state.order.items.push(itemToAdd)
+    }
   },
 
   actions: {
