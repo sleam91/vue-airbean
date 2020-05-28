@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <router-view />
+    </div>
 </template>
 
 <style lang="scss">
-  body {
+body {
     margin: 0;
     #app{
       width:100vw
