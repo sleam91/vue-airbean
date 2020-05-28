@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+// import API from '@/api'
 
 Vue.use(Vuex)
 
@@ -10,67 +11,76 @@ export default new Vuex.Store({
       date: "",
       items: [],
       eta: "",
-      total:"",
+      total: "",
     },
     user: {
       name: "",
       email: "",
-      id: "",
-      listOfOrders: [        {
+      listOfOrders: [{
         orderNo: "12312",
         date: "21/05/12",
         items: [],
         eta: "",
-        total:443,
-      },{
+        total: 443,
+      }, {
         orderNo: "2222",
         date: "21/05/13",
         items: [],
         eta: "",
-        total:333,
-      },{
+        total: 333,
+      }, {
         orderNo: "3333",
         date: "21/05/14",
         items: [],
         eta: "",
-        total:893,
+        total: 893,
       },],
     },
-    menu:[
-      {"id":1,"title":"Bryggkaffe","desc":"Bryggd på månadens bönor.","price":39},
+    menu: [
+      { "id": 1, "title": "Bryggkaffe", "desc": "Bryggd på månadens bönor.", "price": 39 },
       {
-        "id":2,
-        "title":"Caffè Doppio",
-        "desc":"Bryggd på månadens bönor.",
-        "price":49
+        "id": 2,
+        "title": "Caffè Doppio",
+        "desc": "Bryggd på månadens bönor.",
+        "price": 49
       },
-      {"id":3,"title":"Cappuccino","desc":"Bryggd på månadens bönor.","price":49},
+      { "id": 3, "title": "Cappuccino", "desc": "Bryggd på månadens bönor.", "price": 49 },
       {
-        "id":4,
-        "title":"Latte Macchiato",
-        "desc":"Bryggd på månadens bönor.",
-        "price":49
+        "id": 4,
+        "title": "Latte Macchiato",
+        "desc": "Bryggd på månadens bönor.",
+        "price": 49
       },
       {
-        "id":5,
-        "title":"Kaffe Latte",
-        "desc":"Bryggd på månadens bönor.",
-        "price":54
+        "id": 5,
+        "title": "Kaffe Latte",
+        "desc": "Bryggd på månadens bönor.",
+        "price": 54
       },
-      {"id":6,"title":"Cortado","desc":"Bryggd på månadens bönor.","price":39}
+      { "id": 6, "title": "Cortado", "desc": "Bryggd på månadens bönor.", "price": 39 }
     ],
-    loggedIn:false,
+    loggedIn: false,
   },
 
   mutations: {
     addItemToBasket(state, itemToAdd) {
       state.order.items.push(itemToAdd)
+    },
+    removeItemfromBasket(state, itemToRemove) {
+      let itemIndex = state.order.items.findIndex(item => item.id === itemToRemove.id)
+      if (itemIndex !== -1) { state.order.items.splice(itemIndex, 1) }
+    },
+    addOrderToUser(state, order) {
+      state.user.listOfOrders.push(order)
+    },
+    setMenuItems(state,menu){
+      state.menu=menu
     }
   },
 
   actions: {
   },
-  
+
   modules: {
   }
 })
