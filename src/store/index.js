@@ -72,6 +72,7 @@ export default new Vuex.Store({
       }
     },
     addOrderToUser(state) {
+      state.order.orderNo=++state.highestOrderNo
       if(state.loggedIn) {
          state.user.listOfOrders.push(state.order)
       }
