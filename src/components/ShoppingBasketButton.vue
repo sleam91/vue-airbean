@@ -1,6 +1,10 @@
 <template>
     <div class="shoppingButton">
-        <button class="basketButton" @click="showHideBasket()"/>
+        <button class="basketButton" @click="showHideBasket()">
+            <div class="amountBubble" v-if="getAmountOfItems>0">
+                <p class="amountText">{{getAmountOfItems}}</p>
+            </div>
+        </button>
         <shopping-basket :class="{ noDisplay : hideBasket }"/>
     </div>
 </template>
@@ -20,6 +24,11 @@ export default {
     methods: {
         showHideBasket() {
             this.hideBasket = !this.hideBasket
+        }
+    },
+    computed: {
+        getAmountOfItems() {
+            return this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)
         }
     }
 }
@@ -45,6 +54,26 @@ export default {
         border: none;
         border-radius: 50%;
         outline: none;
+        .amountBubble{
+            width: 0.9rem;
+            height: 0.9rem;
+            border: none;
+            border-radius: 50%;
+            position: relative;
+            bottom: 0.9rem;
+            left: 1.5rem;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .amountText{
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                font-size: 0.5rem;
+                color: white;
+            }
+        }
     }
 }    
 .noDisplay {
