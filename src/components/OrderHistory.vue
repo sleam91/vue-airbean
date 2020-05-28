@@ -1,6 +1,6 @@
 <template>
     <div class="user-info">
-        <img src="https://img.icons8.com/color/96/000000/test-account.png" alt="profile" />
+        <img :src="require('@/assets/graphics/profile.svg')" alt="profile" />
         <div class="username">
             <h1>{{name}}</h1>
             <p>{{email}}</p>
@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .user-info {
-    margin-top: 5rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
