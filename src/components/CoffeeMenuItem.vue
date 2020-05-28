@@ -31,6 +31,7 @@ export default {
 
 <style scoped lang="scss">
 .coffeeMenuItem {
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     .left {

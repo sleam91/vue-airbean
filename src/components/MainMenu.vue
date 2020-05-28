@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 .mainMenu {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     color: white;
     width: 100%;
     height: 100%;
