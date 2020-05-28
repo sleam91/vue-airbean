@@ -44,11 +44,31 @@ export default new Vuex.Store({
 
   mutations: {
     addItemToBasket(state, itemToAdd) {
-      state.order.items.push(itemToAdd)
+      let itemExists = false
+      for (let itemInItems of state.order.items) {
+        if(itemInItems.item.id == itemToAdd.id) {
+          itemInItems.amount++
+          itemExists = true
+        }
+      }
+      if(!itemExists) {
+        let newItemToAdd = {}
+        newItemToAdd.item = itemToAdd
+        newItemToAdd.amount = 1
+        state.order.items.push(newItemToAdd)
+      }
     },
-    removeItemfromBasket(state, itemToAdd) {
-      let itemIndex = state.order.items.findIndex(item => item.id === itemToAdd.id)
-      if (itemIndex !== -1) { state.order.items.splice(itemIndex, 1) }
+    removeItemfromBasket(state, itemToRemove) {
+      let itemIndex = state.order.items.findIndex(item => item.item.id === itemToRemove.id)
+      for(let itemInOrderList of state.order.items) {
+        if(itemInOrderList.item.id == itemToRemove.id) {
+          if(itemInOrderList.amount>1){
+            itemInOrderList.amount--
+          } else {
+            state.order.items.splice(itemIndex, 1)
+          }
+        }
+      }
     },
     addOrderToUser(state, order) {
       state.user.listOfOrders.push(order)

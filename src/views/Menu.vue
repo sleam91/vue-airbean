@@ -1,6 +1,7 @@
 <template>
   <div class="menu">
     <top/>
+    <shopping-basket-button/>
     <div class="center">
       <h3>Meny</h3>
       <ul>
@@ -18,13 +19,15 @@
 import Top from '@/components/Top'
 import Bottom from '@/components/Bottom'
 import CoffeeMenuItem from '@/components/CoffeeMenuItem'
+import ShoppingBasketButton from '@/components/ShoppingBasketButton'
 
 export default {
   name: 'Menu',
   components: {
     Top,
     Bottom,
-    CoffeeMenuItem
+    CoffeeMenuItem,
+    ShoppingBasketButton
   },
 
   computed: {
