@@ -8,6 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     highestOrderNo: 0,
+    awaitedOrder : {},
     order: {
       orderNo: "1",
       date: "",
@@ -70,8 +71,18 @@ export default new Vuex.Store({
         }
       }
     },
-    addOrderToUser(state, order) {
-      state.user.listOfOrders.push(order)
+    addOrderToUser(state) {
+      if(state.loggedIn) {
+         state.user.listOfOrders.push(state.order)
+      }
+      state.awaitedOrder = state.order
+      state.order = {
+        orderNo: "1",
+        date: "",
+        items: [],
+        eta: "21",
+        total:"",
+      }
     },
     setMenuItems(state, menu) {
       state.menu = menu
@@ -87,11 +98,11 @@ export default new Vuex.Store({
 
   actions: {
 
-    async addOrderToUser(context, order) {
+    async addOrderToUser(context) {
       if (context.state.loggedIn) {
-        await API.addOrderToUser(order, context.state.user.email)
+        await API.addOrderToUser(context.state.order, context.state.user.email)
       }
-      context.commit('addOrderToUser', order)
+      context.commit('addOrderToUser')
     },
 
     async getMenuItems(context) {
