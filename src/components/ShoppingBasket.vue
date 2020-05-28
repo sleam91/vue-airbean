@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         makeOrder() {
-            this.$store.state.order.sum = this.getSum
+            this.$store.state.order.total = this.getSum
             this.$store.dispatch('addOrderToUser')
             this.$router.push('/status')
         }
