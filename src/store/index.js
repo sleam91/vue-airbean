@@ -7,16 +7,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     order: {
-      orderNo: "",
+      orderNo: "1",
       date: "",
-      items: [
-        // {
-        //   amount: Number,
-        //   item: Object
-        // }
-      ],
-      eta: "",
-      total: "",
+      items: [],
+      eta: "21",
+      total:"",
     },
     user: {
       name: "",
