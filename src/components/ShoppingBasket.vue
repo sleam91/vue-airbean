@@ -2,12 +2,12 @@
     <div class="container">
         <h3>Din beställning</h3>
         <ul class="itemsInBasket">
-            <shopping-basket-item   v-for="shoppingItem in getOrderItems"
-                                    :key="shoppingItem.id"
-                                    :ammountOf="getAmmountOfSameItems(shoppingItem)"
+            <shopping-basket-item   v-for="orderItem in getOrderItems"
+                                    :key="orderItem.item.id"
+                                    :orderItem="orderItem"
             />
         </ul>
-        <div class="summery">
+        <div class="summary">
             <div class="text">
                 <h2>Total</h2>
                 <p>inkl moms + drönarleverans</p>
@@ -29,11 +29,12 @@ export default {
         getOrderItems() {
             return this.$store.state.order.items
         },
-        getAmmountOfSameItems(item) {
-            return this.getOrderItems.filter(itemInList => itemInList.id == item.id).length
-        },
         getSum() {
-            return this.getOrderItems.map(item => item.price).reduce((a,b) => a + b, 0)
+            let sum = 0
+            for (let itemInOrderList of this.$store.state.order.items) {
+                sum += itemInOrderList.item.price * itemInOrderList.amount
+            }
+            return sum
         }
     },
 
@@ -47,13 +48,13 @@ export default {
     top: 15vh;
     left: 10vw;
     background-color: white;
-    height: 80vh;
+    min-height: 80vh;
     width: 80vw;
     border: none;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    .summery {
+    .summary {
         display: flex;
         flex-direction: column;
     }
