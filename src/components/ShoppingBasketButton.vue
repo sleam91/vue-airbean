@@ -38,10 +38,10 @@ export default {
 .shoppingButton {
     .basketButton {
         z-index: 7;
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 5rem;
+        width: 5rem;
         background-image: url('../assets/graphics/bag.svg');
-        background-size: 1.1rem;
+        background-size: 1.5rem;
         background-repeat: no-repeat;
         background-position: center;
         padding: none;
@@ -55,14 +55,14 @@ export default {
         border-radius: 50%;
         outline: none;
         .amountBubble{
-            width: 0.9rem;
-            height: 0.9rem;
+            width:1.8rem;
+            height: 1.8rem;
             border: none;
             border-radius: 50%;
             position: relative;
-            bottom: 0.9rem;
-            left: 1.5rem;
-            background-color: red;
+            bottom: 2rem;
+            left: 2.5rem;
+            background-color: #E5674E;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,8 +70,8 @@ export default {
                 margin: 0;
                 padding: 0;
                 text-align: center;
-                font-size: 0.5rem;
-                color: white;
+                font-size: 1rem;
+                color: #FFFFFF;
             }
         }
     }

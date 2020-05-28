@@ -44,10 +44,10 @@ export default {
 }
 .showMainMenu {
     z-index: 9;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 4.3rem;
+    width: 4.3rem;
     background-image: url('../assets/graphics/navicon.svg');
-    background-size: 1.1rem;
+    background-size: 1.5rem;
     background-repeat: no-repeat;
     background-position: center;
     padding: none;
