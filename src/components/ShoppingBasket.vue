@@ -15,7 +15,7 @@
                 </div>
                 <h2>{{getSum}} kr</h2>
             </div>
-            <button class="makeOrder">Take my money!</button>
+            <button class="makeOrder" @click="makeOrder()">Take my money!</button>
         </div>
     </div>
 </template>
@@ -40,6 +40,13 @@ export default {
             return sum
         }
     },
+    methods: {
+        makeOrder() {
+            this.$store.state.order.sum = this.getSum
+            this.$store.dispatch('addOrderToUser')
+            this.$router.push('/status')
+        }
+    }
 
 }
 </script>
@@ -69,7 +76,7 @@ export default {
             font-size: 2.2rem;
             margin-top: 3rem;
         }
-        
+
         .summary {
             display: flex;
             flex-direction: column;
