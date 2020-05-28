@@ -54,10 +54,10 @@ export default {
 <style scoped lang="scss">
 .wrapper {
     top: 0;
-    position: fixed;
+    position: absolute;
     z-index: 4;
     width: 100vw;
-    height: 100vh;
+    height: 112%;
     background-color: rgba(0, 0, 0, 0.7);
     .container {
         z-index: 6;
