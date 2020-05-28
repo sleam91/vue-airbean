@@ -72,9 +72,17 @@ export default new Vuex.Store({
       }
     },
     addOrderToUser(state) {
-      state.user.listOfOrders.push(state.order)
+      if(state.loggedIn) {
+         state.user.listOfOrders.push(state.order)
+      }
       state.awaitedOrder = state.order
-      state.order = {}
+      state.order = {
+        orderNo: "1",
+        date: "",
+        items: [],
+        eta: "21",
+        total:"",
+      }
     },
     setMenuItems(state, menu) {
       state.menu = menu
