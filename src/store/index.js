@@ -9,11 +9,11 @@ export default new Vuex.Store({
   state: {
     highestOrderNo: 0,
     order: {
-      orderNo: "",
+      orderNo: "1",
       date: "",
       items: [],
-      eta: "",
-      total: "",
+      eta: "21",
+      total:"",
     },
     user: {
       name: "",
