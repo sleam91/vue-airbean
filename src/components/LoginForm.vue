@@ -96,7 +96,7 @@ export default {
         background: #f3e4e1;
         font-family: "Work Sans";
         border-color: black;
-        font-size: large;
+        font-size: 1rem;
         border-width: 1px;
         border-radius: 6px;
         height: 3rem;
@@ -128,11 +128,11 @@ export default {
 }
 
 input[type="submit" i] {
-    padding: 0 2.5rem;
-    height: 3.6rem;
+    padding: 0 8vw;
+    height: 3.4rem;
     font-size: 1.5rem;
     font-family: "PT Serif";
-    border-radius: 1.8rem;
+    border-radius: 1.7rem;
     color: #ffffff;
     border: none;
     background: #2f2926;

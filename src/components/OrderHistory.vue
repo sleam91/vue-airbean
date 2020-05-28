@@ -52,11 +52,10 @@ export default {
 
 <style lang="scss" scoped>
 .user-info {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: white;
     font-family: "Work Sans";
     .username {
@@ -68,17 +67,23 @@ export default {
         h1 {
             font-family: "PT Serif";
             margin-bottom: 0;
+            font-size: 1.5rem;
         }
-        p{
+        p {
+            font-size: 0.875rem;
             margin-top: 0;
         }
     }
     .order-history {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
         width: 70vw;
         max-width: 480px;
         display: flex;
         flex-direction: column;
+        line-height: 1.6;
         h1 {
+            font-size: 1.375rem;
             margin-bottom: 0;
         }
 
@@ -91,16 +96,25 @@ export default {
                 justify-content: space-between;
 
                 h3 {
+                    font-size: 0.875rem;
                     color: rgba(255, 255, 255, 0.582);
                     margin-bottom: 0;
                 }
                 p {
+                    font-size: 0.875rem;
                     color: rgba(255, 255, 255, 0.308);
+                }
+            }
+            .number-date {
+                p {
+                    margin-bottom: 0;
+                    font-size: 0.875rem;
                 }
             }
             .order-total {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.308);
                 p {
+                    font-size: 0.75rem;
                     margin-top: 0;
                 }
             }
