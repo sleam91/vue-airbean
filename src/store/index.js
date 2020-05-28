@@ -78,7 +78,11 @@ export default new Vuex.Store({
     },
     setHighestOrderNo(state, highestOrderNo) {
       state.highestOrderNo = highestOrderNo
-    }
+    },
+    loginUser(state,user){
+      state.user=user
+      state.loggedIn=true
+    }  
   },
 
   actions: {
@@ -99,6 +103,11 @@ export default new Vuex.Store({
     async getHighestOrderNo(context) {
       const highestOrderNo = await API.getHighestOrderNo()
       context.commit('setHighestOrderNo', highestOrderNo)
+    },
+
+    async loginUser(context,user){
+      const userFromAPI=await API.loginUser(user)
+      context.commit('loginUser',userFromAPI)
     }
 
   },
