@@ -87,7 +87,7 @@ export default new Vuex.Store({
 
   actions: {
 
-    async caddOrderToUser(context, order) {
+    async addOrderToUser(context, order) {
       if (context.state.loggedIn) {
         await API.addOrderToUser(order, context.state.user.email)
       }

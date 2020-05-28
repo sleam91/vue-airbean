@@ -65,9 +65,8 @@ export default {
   display: none;
 }
 .left, .right {
-  img {
     height: 100%;
-  }
+    object-fit: cover;
 }
 .invisibleClickForMenu {
     z-index: 10;
