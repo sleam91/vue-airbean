@@ -10,6 +10,7 @@ export default new Vuex.Store({
       date: "",
       items: [],
       eta: "",
+      total:"",
     },
     user: {
       name: "",
@@ -40,7 +41,7 @@ export default new Vuex.Store({
       },
       {"id":6,"title":"Cortado","desc":"Bryggd på månadens bönor.","price":39}
     ],
-
+    loggedIn:false,
   },
 
   mutations: {
