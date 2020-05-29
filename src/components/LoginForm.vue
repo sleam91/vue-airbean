@@ -138,5 +138,6 @@ input[type="submit" i] {
     background: #2f2926;
     letter-spacing: 1.2px;
     vertical-align: middle;
+    outline: none;
 }
 </style>

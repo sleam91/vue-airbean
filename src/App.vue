@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     #app{
-      width:100vw
+      width:100vw;
     }
 }
 </style>

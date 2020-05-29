@@ -48,10 +48,12 @@ export default {
     },
     methods: {
         async makeOrder() {
-            this.$store.state.order.date=getTodaysFormattedDate()//TODO convert to commit
-            this.$store.state.order.total = this.getSum//TODO convert to commit
-            await this.$store.dispatch('addOrderToUser')
-            this.$router.push('/status')
+            if(this.getSum>0) {
+                this.$store.state.order.date=getTodaysFormattedDate()//TODO convert to commit
+                this.$store.state.order.total = this.getSum//TODO convert to commit
+                await this.$store.dispatch('addOrderToUser')
+                this.$router.push('/status')
+            }
         }
     }
 
@@ -128,6 +130,7 @@ export default {
             letter-spacing: 1.2px;
             vertical-align: middle;
             font-family: "PT Serif";
+            outline: none;
         }
     }
 }    
