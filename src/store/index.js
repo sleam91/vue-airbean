@@ -18,27 +18,10 @@ export default new Vuex.Store({
       total:"",
     },
     user: {
+      id:0,
       name: "",
       email: "",
-      listOfOrders: [{
-        orderNo: "12312",
-        date: "21/05/12",
-        items: [],
-        eta: "",
-        total: 443,
-      }, {
-        orderNo: "2222",
-        date: "21/05/13",
-        items: [],
-        eta: "",
-        total: 333,
-      }, {
-        orderNo: "3333",
-        date: "21/05/14",
-        items: [],
-        eta: "",
-        total: 893,
-      },],
+      listOfOrders: [],
     },
     menu: [],
     loggedIn: false,
@@ -102,7 +85,7 @@ export default new Vuex.Store({
 
     async addOrderToUser(context) {
       if (context.state.loggedIn) {
-        await API.addOrderToUser(context.state.order, context.state.user.email)
+        await API.addOrderToUser(context.state.order, context.state.user.id)
       }
       context.commit('addOrderToUser')
     },
