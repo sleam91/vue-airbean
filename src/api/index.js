@@ -6,8 +6,8 @@ async function getMenuItems() {
     return menu
 }
 
-async function addOrderToUser(order,email){
-    await fetch(URL+'/users/'+email, {
+async function addOrderToUser(order,id){
+    await fetch(URL+'/users/'+id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
