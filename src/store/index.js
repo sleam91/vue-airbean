@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     highestOrderNo: 0,
     awaitedOrder : {},
+    hideInvisibleFilm : true,
     order: {
       orderNo: "1",
       date: "",
