@@ -40,8 +40,8 @@ export default {
 }
 .showMainMenu {
     z-index: 4;
-    height: 4.3rem;
-    width: 4.3rem;
+    height: 4.1rem;
+    width: 4.1rem;
     background-image: url('../assets/graphics/navicon.svg');
     background-size: 1.5rem;
     background-repeat: no-repeat;

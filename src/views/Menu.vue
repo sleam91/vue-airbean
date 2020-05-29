@@ -11,7 +11,7 @@
                           :menuItem="singleItem"
         />   
       </ul>
-      <bottom/>
+      <bottom class="bottom"/>
   </div>
 </template>
 
@@ -58,22 +58,20 @@ export default {
   display: none;
 }
 .menu {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
+  min-height: 53rem;
   background-color: #F3E4E1;
   .invisibleFilm{
-
     z-index: 5;
     position: absolute;
-    height: 116%;
+    height: 54.8rem;
     width: 100vw;
     background-color: rgba(0,0,0,0.5);
   }
   h3 {
+    font-family: "PT Serif";
     font-size: 3rem;
     text-align: center;
     margin: 1rem;
@@ -83,4 +81,8 @@ export default {
     width: 90%;
   }
 }
+.bottom {
+  margin-top: 8rem;
+
+}  
 </style>

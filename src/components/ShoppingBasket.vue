@@ -72,6 +72,7 @@ export default {
     width: 100vw;
     height: 112%;
     .container {
+
         z-index: 6;
         position: absolute;
         top: 6rem;
@@ -81,13 +82,16 @@ export default {
         width: 90vw;
         margin: 0;
         border: none;
-        border-radius: 0.5rem;
+        border-radius: 0.3rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         h3{
-            font-size: 2.2rem;
-            margin-top: 3rem;
+            font-family: "PT Serif";
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
         }
         ul {
             width: 90%;
@@ -100,12 +104,22 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            .text h2, h2 {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                margin-bottom: 0.3rem;
+            }
+            .text p {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
         }
         .makeOrder{
-            width: 18rem;
-            padding: 0 2.5rem;
+            margin: 2.5rem 0;
+            width: 16rem;
+            padding: 0 1rem;
             height: 3.6rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-family: "PT Serif";
             border-radius: 1.8rem;
             color: #ffffff;
@@ -113,6 +127,7 @@ export default {
             background: #2f2926;
             letter-spacing: 1.2px;
             vertical-align: middle;
+            font-family: "PT Serif";
         }
     }
 }    
