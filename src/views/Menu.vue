@@ -25,7 +25,7 @@ import ShoppingBasketButton from '@/components/ShoppingBasketButton'
 export default {
   name: 'Menu',
   data(){return{
-    hideInvisibleFilm: true
+    hideInvisibleFilm: this.$store.state.hideInvisibleFilm
   }},
 
   components: {
@@ -38,19 +38,24 @@ export default {
   computed: {
     getCoffeeItems() {
       return this.$store.state.menu
-      
     }
   },
 
   methods: {
     hideBasket() {
       this.$router.push('/menu')
-      this.hideInvisibleFilm = true
+      this.$store.state.hideInvisibleFilm = true
     },
     showBasket() {
       this.$router.push('/menu/cart')
-      this.hideInvisibleFilm = false
+      this.$store.state.hideInvisibleFilm = false
     }
+  },
+
+  beforeUpdate() {
+      console.log('saving data');
+      sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
+      this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
   }
   
 }

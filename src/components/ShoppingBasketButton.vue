@@ -12,7 +12,7 @@
 
 export default {
     data() {return{
-        hideBasket : true
+        hideBasket : this.$store.state.hideInvisibleFilm
     }},
 
     methods: {
@@ -29,6 +29,9 @@ export default {
         getAmountOfItems() {
             return this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)
         }
+    },
+    beforeUpdate() {
+        this.hideBasket = this.$store.state.hideInvisibleFilm
     }
 }
 </script>
