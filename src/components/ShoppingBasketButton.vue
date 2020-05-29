@@ -37,7 +37,7 @@ export default {
 <style scoped lang="scss">
 .shoppingButton {
     .basketButton {
-        z-index: 7;
+        z-index: 4;
         height: 5rem;
         width: 5rem;
         background-image: url('../assets/graphics/bag.svg');
@@ -48,7 +48,7 @@ export default {
         margin: none;
         box-shadow: none;
         position: absolute;
-        right: 1rem;
+        right: 1.5rem;
         top: 1rem;
         background-color: #2F2926;
         border: none;

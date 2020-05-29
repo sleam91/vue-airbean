@@ -1,6 +1,11 @@
 <template>
     <div class="wrapper">
+        <svg class="littleTriangle" width="67" height="47" viewBox="0 0 67 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.8852 1.20995C32.6841 0.116578 34.3159 0.116574 35.1148 1.20995L66.2504 43.82C67.216 45.1415 66.2722 47 64.6356 47H2.36444C0.727807 47 -0.215984 45.1415 0.749604 43.82L31.8852 1.20995Z" fill="white"/>
+        </svg>
+
         <div class="container">
+            
             <h3>Din beställning</h3>
             <ul class="itemsInBasket">
                 <shopping-basket-item   v-for="orderItem in getOrderItems"
@@ -55,7 +60,14 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
+    .littleTriangle{
+        z-index: 20;
+        position: absolute;
+        top: 4.8rem;
+        right: 2rem;
+    }
     top: 0;
+    left: 0;
     position: absolute;
     z-index: 4;
     width: 100vw;
@@ -64,11 +76,12 @@ export default {
     .container {
         z-index: 6;
         position: absolute;
-        top: 13vh;
-        left: 5vw;
+        top: 6rem;
+        left: 4vw;
         background-color: white;
         min-height: 80vh;
         width: 90vw;
+        margin: 0;
         border: none;
         border-radius: 0.5rem;
         display: flex;
@@ -78,10 +91,17 @@ export default {
             font-size: 2.2rem;
             margin-top: 3rem;
         }
+        ul {
+            width: 90%;
+            margin: 0;
+            padding: 0;
+        }
 
         .summary {
+            width: 90%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
         }
         .makeOrder{
             width: 18rem;

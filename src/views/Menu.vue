@@ -1,5 +1,6 @@
 <template>
   <div class="menu">
+      <div class="invisibleFilm"/>
       <top/>
       <shopping-basket-button/>
       <h3>Meny</h3>
@@ -43,18 +44,23 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   min-height: 100vh;
   background-color: #F3E4E1;
-  .center{
-    h3 {
-      font-size: 3rem;
-      text-align: center;
-      margin: 1rem;
-    }
-    ul {
-      padding: 1rem;
-    }
+  .invisibleFilm{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+  }
+  h3 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem;
+  }
+  ul {
+    padding: 0;
+    width: 90%;
   }
 }
 </style>

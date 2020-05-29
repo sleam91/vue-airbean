@@ -34,6 +34,7 @@ export default {
     z-index: 3;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     .left {
         display: flex;
     }
