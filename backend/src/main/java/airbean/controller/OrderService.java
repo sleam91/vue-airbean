@@ -16,11 +16,15 @@ public class OrderService {
 	public List<Order> addOrder() {
 		return orderRepository.findAll();
 	}
-	
+
 	public int getHighestOrderNo() {
-		return orderRepository.getHighestOrderNo();
+		int orderNo;
+		try {
+			orderNo = orderRepository.getHighestOrderNo();
+		} catch (Exception e) {
+			orderNo = 9999;
+		}
+		return orderNo;
 	}
-
-
 
 }
