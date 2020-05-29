@@ -31,9 +31,11 @@ export default {
 
 <style scoped lang="scss">
 .coffeeMenuItem {
+    font-family: "Work Sans";
     z-index: 3;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     .left {
         display: flex;
     }
@@ -56,18 +58,18 @@ export default {
     }
     .textPart{
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0;
         }
         p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin-top: 0;
         }
     }
     .right{
         position: relative;
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0;
         }
         p {
@@ -75,7 +77,7 @@ export default {
             font-size: 1rem;
             color: rgb(158, 158, 158);
             position: absolute;
-            bottom: 1rem;
+            bottom: 0.8rem;
             right: 3.7rem;
         }
     }

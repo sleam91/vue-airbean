@@ -18,14 +18,10 @@ export default {
 
     methods: {
         displayMenu() {
-            console.log('in displayMenu');
             this.hideMenu = false
-            console.log('hideMenu is now ' + this.hideMenu);
         },
         hideMainMenu() {
-            console.log('in hideMainMenu');
             this.hideMenu = true
-            console.log('hideMenu is now ' + this.hideMenu);
         }
     },
 
@@ -40,12 +36,12 @@ export default {
     display: none;
 }
 .menuButton{
-    z-index: 8;
+    z-index: 3;
 }
 .showMainMenu {
-    z-index: 9;
-    height: 4.3rem;
-    width: 4.3rem;
+    z-index: 4;
+    height: 4.1rem;
+    width: 4.1rem;
     background-image: url('../assets/graphics/navicon.svg');
     background-size: 1.5rem;
     background-repeat: no-repeat;
@@ -54,8 +50,8 @@ export default {
     margin: none;
     box-shadow: none;
     position: absolute;
-    left: 1rem;
-    top: 1rem;
+    left: 1.5rem;
+    top: 1.5rem;
     background-color: white;
     border: none;
     border-radius: 50%;

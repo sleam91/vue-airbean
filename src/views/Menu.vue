@@ -1,7 +1,9 @@
 <template>
   <div class="menu">
+      <div class="invisibleFilm" :class="{ noDisplay : hideInvisibleFilm }"/>
       <top/>
-      <shopping-basket-button/>
+      <shopping-basket-button v-on:basket-hidden="hideInvFilm()"
+                              v-on:basket-visible="showInvFilm()"/>
       <h3>Meny</h3>
       <ul>
         <coffee-menu-item v-for='singleItem in getCoffeeItems'
@@ -9,7 +11,7 @@
                           :menuItem="singleItem"
         />   
       </ul>
-      <bottom/>
+      <bottom class="bottom"/>
   </div>
 </template>
 
@@ -21,6 +23,10 @@ import ShoppingBasketButton from '@/components/ShoppingBasketButton'
 
 export default {
   name: 'Menu',
+  data(){return{
+    hideInvisibleFilm: true
+  }},
+
   components: {
     Top,
     Bottom,
@@ -33,28 +39,50 @@ export default {
       return this.$store.state.menu
       
     }
+  },
+
+  methods: {
+    hideInvFilm() {
+      this.hideInvisibleFilm = true
+    },
+    showInvFilm() {
+      this.hideInvisibleFilm = false
+    }
   }
   
 }
 </script>
 
 <style scoped lang="scss">
+.noDisplay {
+  display: none;
+}
 .menu {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  align-items: center;
+  min-height: 53rem;
   background-color: #F3E4E1;
-  .center{
-    h3 {
-      font-size: 3rem;
-      text-align: center;
-      margin: 1rem;
-    }
-    ul {
-      padding: 1rem;
-    }
+  .invisibleFilm{
+    z-index: 5;
+    position: absolute;
+    height: 54.8rem;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+  }
+  h3 {
+    font-family: "PT Serif";
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem;
+  }
+  ul {
+    padding: 0;
+    width: 90%;
   }
 }
+.bottom {
+  margin-top: 8rem;
+
+}  
 </style>
