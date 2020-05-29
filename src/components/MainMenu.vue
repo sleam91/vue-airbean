@@ -3,19 +3,19 @@
         <button type="button" class="exit" v-on:click="$emit('close-menu')">
         </button>
         <router-link :to="'/menu'">
-            <h3>Meny</h3>
+            <h3 v-on:click="$emit('close-menu')">Meny</h3>
         </router-link>
          <p>______________________</p>
         <router-link :to="'/about'">
-            <h3>Vårt kaffe</h3>
+            <h3 v-on:click="$emit('close-menu')">Vårt kaffe</h3>
         </router-link>
         <p>______________________</p>
         <router-link :to="'/profile'">
-            <h3>Min profil</h3>
+            <h3 v-on:click="$emit('close-menu')">Min profil</h3>
         </router-link>
         <p>______________________</p>
         <router-link :to="'/status'">
-            <h3>Orderstatus</h3>
+            <h3 v-on:click="$emit('close-menu')">Orderstatus</h3>
         </router-link>
   </div>
 </template>
