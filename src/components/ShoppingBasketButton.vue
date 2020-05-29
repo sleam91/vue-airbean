@@ -5,21 +5,15 @@
                 <p class="amountText">{{getAmountOfItems}}</p>
             </div>
         </button>
-        <shopping-basket :class="{ noDisplay : hideBasket }"/>
     </div>
 </template>
 
 <script>
-import ShoppingBasket from '@/components/ShoppingBasket'
 
 export default {
     data() {return{
         hideBasket : true
     }},
-
-    components: {
-        ShoppingBasket
-    },
 
     methods: {
         showHideBasket() {
@@ -81,7 +75,4 @@ export default {
         }
     }
 }    
-.noDisplay {
-    display: none;
-}
 </style>
