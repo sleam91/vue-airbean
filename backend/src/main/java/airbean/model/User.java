@@ -18,7 +18,7 @@ public class User {
 	private String name;
 	private String email;
 	@OneToMany
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="userId")
 	private List<Order> orders;
 
 	public User() {

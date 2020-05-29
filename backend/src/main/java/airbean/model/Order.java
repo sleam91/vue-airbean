@@ -19,8 +19,8 @@ public class Order {
 	private int orderNo;
 	private String date;
 	@ManyToMany
-	@JoinTable(joinColumns=@JoinColumn(name = "order_No", referencedColumnName = "orderNo"),
-			inverseJoinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"))
+	@JoinTable(joinColumns=@JoinColumn(name = "orderNo", referencedColumnName = "orderNo"),
+			inverseJoinColumns = @JoinColumn(name = "itemId", referencedColumnName = "id"))
 	private List<MenuItem> items;
 	private String eta;
 	private int total;
