@@ -22,6 +22,7 @@
 
 <script>
 import ShoppingBasketItem from '@/components/ShoppingBasketItem'
+import getTodaysFormattedDate from '@/assets/date'
 
 export default {
     components: {
@@ -41,9 +42,10 @@ export default {
         }
     },
     methods: {
-        makeOrder() {
-            this.$store.state.order.total = this.getSum
-            this.$store.dispatch('addOrderToUser')
+        async makeOrder() {
+            this.$store.state.order.date=getTodaysFormattedDate()//TODO convert to commit
+            this.$store.state.order.total = this.getSum//TODO convert to commit
+            await this.$store.dispatch('addOrderToUser')
             this.$router.push('/status')
         }
     }

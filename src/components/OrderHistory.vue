@@ -1,6 +1,6 @@
 <template>
     <div class="user-info">
-        <img src="https://img.icons8.com/color/96/000000/test-account.png" alt="profile" />
+        <img :src="require('@/assets/graphics/profile.svg')" alt="profile" />
         <div class="username">
             <h1>{{name}}</h1>
             <p>{{email}}</p>
@@ -10,7 +10,7 @@
             <p v-if="orderList.length==0">Inga beställningar!</p>
             <article class="order" v-for="order in orderList" :key="order.orderNo">
                 <div class="number-date">
-                    <h3>{{order.orderNo}}</h3>
+                    <h3>{{'#AB'+order.orderNo+'Z'}}</h3>
                     <p>{{order.date}}</p>
                 </div>
                 <div class="order-total">
@@ -52,11 +52,10 @@ export default {
 
 <style lang="scss" scoped>
 .user-info {
-    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: white;
     font-family: "Work Sans";
     .username {
@@ -68,17 +67,23 @@ export default {
         h1 {
             font-family: "PT Serif";
             margin-bottom: 0;
+            font-size: 1.5rem;
         }
-        p{
+        p {
+            font-size: 0.875rem;
             margin-top: 0;
         }
     }
     .order-history {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
         width: 70vw;
         max-width: 480px;
         display: flex;
         flex-direction: column;
+        line-height: 1.6;
         h1 {
+            font-size: 1.375rem;
             margin-bottom: 0;
         }
 
@@ -91,16 +96,25 @@ export default {
                 justify-content: space-between;
 
                 h3 {
+                    font-size: 0.875rem;
                     color: rgba(255, 255, 255, 0.582);
                     margin-bottom: 0;
                 }
                 p {
+                    font-size: 0.875rem;
                     color: rgba(255, 255, 255, 0.308);
+                }
+            }
+            .number-date {
+                p {
+                    margin-bottom: 0;
+                    font-size: 0.875rem;
                 }
             }
             .order-total {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.308);
                 p {
+                    font-size: 0.75rem;
                     margin-top: 0;
                 }
             }
