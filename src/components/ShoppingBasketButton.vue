@@ -24,6 +24,11 @@ export default {
     methods: {
         showHideBasket() {
             this.hideBasket = !this.hideBasket
+            if(this.hideBasket) {
+                this.$emit('basket-hidden')
+            } else {
+                this.$emit('basket-visible')
+            }
         }
     },
     computed: {
@@ -37,7 +42,7 @@ export default {
 <style scoped lang="scss">
 .shoppingButton {
     .basketButton {
-        z-index: 4;
+        z-index: 6;
         height: 5rem;
         width: 5rem;
         background-image: url('../assets/graphics/bag.svg');

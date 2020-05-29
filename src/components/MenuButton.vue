@@ -36,7 +36,7 @@ export default {
     display: none;
 }
 .menuButton{
-    z-index: 8;
+    z-index: 3;
 }
 .showMainMenu {
     z-index: 4;

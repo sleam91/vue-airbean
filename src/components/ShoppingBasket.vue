@@ -63,16 +63,14 @@ export default {
     .littleTriangle{
         z-index: 20;
         position: absolute;
-        top: 4.8rem;
-        right: 2rem;
+        top: 5rem;
+        right: 1.9rem;
     }
     top: 0;
     left: 0;
     position: absolute;
-    z-index: 4;
     width: 100vw;
     height: 112%;
-    background-color: rgba(0, 0, 0, 0.7);
     .container {
         z-index: 6;
         position: absolute;
