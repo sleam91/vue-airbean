@@ -2,17 +2,25 @@ package airbean.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "orders")
 public class Order {
 
 	@Id
-	private String orderNo;
+	private int orderNo;
 	private String date;
-	@OneToMany
+	@ManyToMany
+	@JoinTable(joinColumns=@JoinColumn(name = "order_No", referencedColumnName = "orderNo"),
+			inverseJoinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"))
 	private List<MenuItem> items;
 	private String eta;
 	private int total;
@@ -20,7 +28,7 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(String orderNo, String date, List<MenuItem> items, String eta, int total) {
+	public Order(int orderNo, String date, List<MenuItem> items, String eta, int total) {
 		super();
 		this.orderNo = orderNo;
 		this.date = date;
@@ -29,11 +37,11 @@ public class Order {
 		this.total = total;
 	}
 
-	public String getOrderNo() {
+	public int getOrderNo() {
 		return orderNo;
 	}
 
-	public void setOrderNo(String orderNo) {
+	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
 

@@ -5,17 +5,21 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="users")
 public class User {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String email;
 	private String name;
+	private String email;
 	@OneToMany
-	private List<Order> listOfOrders;
+	@JoinColumn(name="user_id")
+	private List<Order> orders;
 
 	public User() {
 	}
@@ -50,11 +54,11 @@ public class User {
 	}
 
 	public List<Order> getListOfOrders() {
-		return listOfOrders;
+		return orders;
 	}
 
-	public void setListOfOrders(List<Order> listOfOrders) {
-		this.listOfOrders = listOfOrders;
+	public void setListOfOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 }
