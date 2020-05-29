@@ -1,7 +1,9 @@
 package airbean.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ public class User {
 	private int id;
 	private String name;
 	private String email;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="userId")
 	private List<Order> orders;
 
@@ -27,6 +29,7 @@ public class User {
 	public User(String name, String email) {
 		this.name = name;
 		this.email = email;
+		this.orders=new ArrayList<>();
 	}
 
 	public int getId() {
