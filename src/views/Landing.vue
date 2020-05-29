@@ -29,14 +29,10 @@ export default {
   
   methods: {
     closeMenu() {
-      console.log('in close menu');
       this.hideMenu = true
-      console.log('hideMenu is now '+this.hideMenu);
     },
     displayMenu() {
-      console.log('in diplay menu');
       this.hideMenu = false
-      console.log('hideMenu is now '+this.hideMenu);
     }
   }
 }

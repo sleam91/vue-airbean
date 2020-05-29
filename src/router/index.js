@@ -9,7 +9,7 @@ import About from '@/views/About'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/landing',
     name: 'Landing',
@@ -21,14 +21,14 @@ Vue.use(VueRouter)
     component: About,
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: Cart,
-  },
-  {
     path: '/menu',
     name: 'Menu',
     component: Menu,
+    children: [{
+      path: 'cart',
+      name: 'Cart',
+      component: Cart
+    }]
   },
   {
     path: '/profile',

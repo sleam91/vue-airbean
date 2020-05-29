@@ -2,8 +2,8 @@
   <div class="menu">
       <div class="invisibleFilm" :class="{ noDisplay : hideInvisibleFilm }"/>
       <top/>
-      <shopping-basket-button v-on:basket-hidden="hideInvFilm()"
-                              v-on:basket-visible="showInvFilm()"/>
+      <shopping-basket-button v-on:basket-hidden="hideBasket()"
+                              v-on:basket-visible="showBasket()"/>
       <h3>Meny</h3>
       <ul>
         <coffee-menu-item v-for='singleItem in getCoffeeItems'
@@ -11,6 +11,7 @@
                           :menuItem="singleItem"
         />   
       </ul>
+      <router-view/>
       <bottom class="bottom"/>
   </div>
 </template>
@@ -42,10 +43,12 @@ export default {
   },
 
   methods: {
-    hideInvFilm() {
+    hideBasket() {
+      this.$router.push('/menu')
       this.hideInvisibleFilm = true
     },
-    showInvFilm() {
+    showBasket() {
+      this.$router.push('/menu/cart')
       this.hideInvisibleFilm = false
     }
   }
