@@ -1,14 +1,13 @@
 package airbean.model;
 
-import java.util.List;
+//import java.util.List;
 
-import javax.persistence.Column;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,21 +17,21 @@ public class Order {
 	@Id
 	private int orderNo;
 	private String date;
-	@ManyToMany
-	@JoinTable(joinColumns=@JoinColumn(name = "orderNo", referencedColumnName = "orderNo"),
-			inverseJoinColumns = @JoinColumn(name = "itemId", referencedColumnName = "id"))
-	private List<MenuItem> items;
+//	@ManyToMany(cascade = CascadeType.PERSIST)
+//	@JoinTable(joinColumns=@JoinColumn(name = "orderNo", referencedColumnName = "orderNo"),
+//			inverseJoinColumns = @JoinColumn(name = "menuItemId", referencedColumnName = "id"))
+//	private List<MenuItem> menuItems;
 	private String eta;
 	private int total;
 
 	public Order() {
 	}
 
-	public Order(int orderNo, String date, List<MenuItem> items, String eta, int total) {
+	public Order(int orderNo, String date, String eta, int total) {
 		super();
 		this.orderNo = orderNo;
 		this.date = date;
-		this.items = items;
+//		this.menuItems = menuItems;
 		this.eta = eta;
 		this.total = total;
 	}
@@ -53,13 +52,13 @@ public class Order {
 		this.date = date;
 	}
 
-	public List<MenuItem> getItems() {
-		return items;
-	}
-
-	public void setItems(List<MenuItem> items) {
-		this.items = items;
-	}
+//	public List<MenuItem> getMenuItems() {
+//		return menuItems;
+//	}
+//
+//	public void setItems(List<MenuItem> menuItems) {
+//		this.menuItems = menuItems;
+//	}
 
 	public String getEta() {
 		return eta;
