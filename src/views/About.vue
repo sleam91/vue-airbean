@@ -1,7 +1,5 @@
 <template>
-
   <div class="about">
-  
     <top
     />
     <div class="about-content"> 
@@ -17,28 +15,22 @@
         <img src="../assets/graphics/eva-cortado.jpg" alt="Eva Cortado">
         <h3>Eva Cortado</h3>
         <p>VD & Grundare</p>
-      </div>
-    
+      </div>  
     </div> 
     <bottom
     />
-
   </div>
-
 </template>
-
 
 <script>
 import Top from '@/components/Top'
 import Bottom from '@/components/Bottom'
-
 export default {
   name: 'About',
   components: {
     Top,
     Bottom,
   },
-
 }
 </script>
 
@@ -52,35 +44,33 @@ export default {
     min-height: 100vh;
     h1 {
       font-family: 'PT Serif';
-      margin: 0.3rem 0;
-      font-size: 1.8rem;
+      margin: 2rem 0 1.2rem 0;
+      font-size: 2.7rem;
     }
     p {
       font-family: 'Work Sans';
-      font-size: 0.532rem;
+      font-size: 0.782rem;
       line-height: 1.6;
       word-spacing: 0.08rem;
-
+      margin-top: 1.2rem;
     }
     div.about-content {
       padding: 0 1.6rem 1rem 1.6rem;
       p.bold {
-        font-size: 0.6rem;
+        font-size: 0.88rem;
         font-weight: bold;
         line-height: 1.7;
         word-spacing: normal;
-
+        padding: 0 1.7rem 0 0;
       }
       div.ceo {
         width: fit-content;
         margin: 0 auto;
         img {
-          // width: 74px;
-          // border-radius: 37px;
-          width: 54px;
-          border-radius: 27px;
+          width: 74px;
+          border-radius: 37px;
           display: block;
-          margin: 1.5rem auto 0 auto;
+          margin: 3.2rem auto 0.3rem auto;
         }
         h3, p {
           margin: 0;
@@ -88,14 +78,13 @@ export default {
         }
         h3 {
           font-family: 'PT Serif';
-          font-size: 1.03rem;
+          font-size: 1.3rem;
         }
         p {
           width: fit-content;
-          margin: 0 auto;
+          margin: 0 auto 2.5rem auto;
         }
       }
     }
   }
-
 </style>
