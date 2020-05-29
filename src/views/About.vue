@@ -31,14 +31,12 @@
 <script>
 import Top from '@/components/Top'
 import Bottom from '@/components/Bottom'
-
 export default {
   name: 'About',
   components: {
     Top,
     Bottom,
   },
-
 }
 </script>
 
@@ -60,7 +58,6 @@ export default {
       font-size: 0.532rem;
       line-height: 1.6;
       word-spacing: 0.08rem;
-
     }
     div.about-content {
       padding: 0 1.6rem 1rem 1.6rem;
@@ -69,7 +66,6 @@ export default {
         font-weight: bold;
         line-height: 1.7;
         word-spacing: normal;
-
       }
       div.ceo {
         width: fit-content;
@@ -97,5 +93,4 @@ export default {
       }
     }
   }
-
 </style>
