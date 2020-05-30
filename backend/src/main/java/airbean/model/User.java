@@ -1,21 +1,27 @@
 package airbean.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="users")
 public class User {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String email;
 	private String name;
-	@OneToMany
-	private List<Order> listOfOrders;
+	private String email;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="userId")
+	private List<Order> orders;
 
 	public User() {
 	}
@@ -23,6 +29,7 @@ public class User {
 	public User(String name, String email) {
 		this.name = name;
 		this.email = email;
+		this.orders=new ArrayList<>();
 	}
 
 	public int getId() {
@@ -50,11 +57,11 @@ public class User {
 	}
 
 	public List<Order> getListOfOrders() {
-		return listOfOrders;
+		return orders;
 	}
 
-	public void setListOfOrders(List<Order> listOfOrders) {
-		this.listOfOrders = listOfOrders;
+	public void setListOfOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 }

@@ -1,14 +1,18 @@
 package airbean.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "menuItems")
 public class MenuItem {
 
 	@Id
 	private int id;
 	private String title;
+	@Column(name="description")
 	private String desc;
 	private int price;
 
