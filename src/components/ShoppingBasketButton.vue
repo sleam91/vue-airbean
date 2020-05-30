@@ -32,7 +32,7 @@ export default {
         showHideBasket() {
             this.hideBasket = this.$store.state.hideInvisibleFilm
             this.hideBasket = !this.hideBasket
-            this.$store.state.hideInvisibleFilm = this.hideBasket
+            this.$store.commit('updateInvisibleFilm',this.hideBasket)
             if(this.hideBasket) {
                 this.$emit('basket-hidden')
             } else {
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         getAmountOfItems() {
-            return this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)
+            return this.$store.getters.getAmountOfItems
         },
         hideTriangle() {
             return this.$store.state.hideInvisibleFilm

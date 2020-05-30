@@ -25,6 +25,11 @@ export default new Vuex.Store({
     menu: [],
     loggedIn: false,
   },
+  getters: {
+    getAmountOfItems: state => {
+      return state.order.items.map(item => item.amount).reduce((a, b) => a + b, 0)
+    }
+  },
 
   mutations: {
     addItemToBasket(state, itemToAdd) {
@@ -76,9 +81,32 @@ export default new Vuex.Store({
     setHighestOrderNo(state, highestOrderNo) {
       state.highestOrderNo = highestOrderNo
     },
+    setNameAndEmail(state, loginData) {
+      state.user.name = loginData.name;
+      state.user.email = loginData.email;
+
+    },
     loginUser(state, user) {
       state.user = user
       state.loggedIn = true
+    },
+    showInvisibleFilm(state) {
+      state.hideInvisibleFilm = false;
+    },
+    hideInvisibleFilm(state) {
+      state.hideInvisibleFilm = true;
+    },
+    updateInvisibleFilm(state, value) {
+      state.hideInvisibleFilm = value
+    },
+    setOrderDate(state, date) {
+      state.order.date = date
+    },
+    setOrderTotal(state, total) {
+      state.order.total = total
+    },
+    setOrderEta(state, eta) {
+      state.order.eta = eta
     }
   },
 

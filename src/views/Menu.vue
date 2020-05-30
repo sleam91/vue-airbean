@@ -44,11 +44,11 @@ export default {
   methods: {
     hideBasket() {
       this.$router.push('/menu')
-      this.$store.state.hideInvisibleFilm = true
+      this.$store.commit('hideInvisibleFilm')
     },
     showBasket() {
       this.$router.push('/menu/cart')
-      this.$store.state.hideInvisibleFilm = false
+      this.$store.commit('showInvisibleFilm')
     }
   },
 
@@ -57,7 +57,7 @@ export default {
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
   },
     beforeCreate() {
-        this.$store.state.hideInvisibleFilm = true
+        this.$store.commit('hideInvisibleFilm')
     }
   
 }
