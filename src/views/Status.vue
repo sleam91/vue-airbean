@@ -26,7 +26,7 @@
 export default {
   name: 'Status',
   data: () => ({
-        numberTitle: "Ordernummer: #",
+        numberTitle: "Ordernummer ",
         title: "Din beställning är på väg!",
         titleEmpty: "Du har inte lagt din order än.",
         minutes: " minuter",

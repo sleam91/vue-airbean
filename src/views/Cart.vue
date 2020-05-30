@@ -48,6 +48,7 @@ export default {
             if (this.getSum > 0) {
                 this.$store.state.order.date = getTodaysFormattedDate(); //TODO convert to commit
                 this.$store.state.order.total = this.getSum; //TODO convert to commit
+                this.$store.state.order.eta=this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)+4
                 await this.$store.dispatch("addOrderToUser");
                 this.$store.state.hideInvisibleFilm = true;
                 this.$router.push("/status");

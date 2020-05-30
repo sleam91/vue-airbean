@@ -11,10 +11,10 @@ export default new Vuex.Store({
     awaitedOrder: {},
     hideInvisibleFilm: true,
     order: {
-      orderNo: "1",
+      orderNo: 1,
       date: "",
       items: [],
-      eta: "21",
+      eta: 0,
       total: "",
     },
     user: {
