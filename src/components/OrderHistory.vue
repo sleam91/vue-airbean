@@ -46,6 +46,9 @@ export default {
             }
             return total;
         }
+    },
+    created() {
+        sessionStorage.setItem("storeState", JSON.stringify(this.$store.state));
     }
 };
 </script>
