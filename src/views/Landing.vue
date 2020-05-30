@@ -47,13 +47,12 @@ export default {
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(69, 87, 87);
+  background-color: #38846D;
 }
 .center {
-  height: 7rem;
   position: absolute;
-  top: 53%;
-  left: 53%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
