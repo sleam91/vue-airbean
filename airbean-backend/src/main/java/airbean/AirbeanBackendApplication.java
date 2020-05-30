@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AirbeanApiDataApplication {
+public class AirbeanBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AirbeanApiDataApplication.class, args);
+		SpringApplication.run(AirbeanBackendApplication.class, args);
 	}
 
 }

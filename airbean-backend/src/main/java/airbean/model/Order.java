@@ -1,13 +1,7 @@
 package airbean.model;
 
-//import java.util.List;
-
-//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +11,6 @@ public class Order {
 	@Id
 	private int orderNo;
 	private String date;
-//	@ManyToMany(cascade = CascadeType.PERSIST)
-//	@JoinTable(joinColumns=@JoinColumn(name = "orderNo", referencedColumnName = "orderNo"),
-//			inverseJoinColumns = @JoinColumn(name = "menuItemId", referencedColumnName = "id"))
-//	private List<MenuItem> menuItems;
 	private String eta;
 	private int total;
 
@@ -31,7 +21,6 @@ public class Order {
 		super();
 		this.orderNo = orderNo;
 		this.date = date;
-//		this.menuItems = menuItems;
 		this.eta = eta;
 		this.total = total;
 	}
@@ -51,14 +40,6 @@ public class Order {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
-//	public List<MenuItem> getMenuItems() {
-//		return menuItems;
-//	}
-//
-//	public void setItems(List<MenuItem> menuItems) {
-//		this.menuItems = menuItems;
-//	}
 
 	public String getEta() {
 		return eta;

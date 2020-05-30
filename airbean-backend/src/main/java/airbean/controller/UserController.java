@@ -20,7 +20,7 @@ public class UserController {
 	@CrossOrigin(origins = "http://localhost:8080")
 	@PostMapping("/api/users")
 	public User addOrGetUser(@RequestBody User user) {
-		return userService.getUser(user.getName(), user.getEmail());
+		return userService.addOrGetUser(user.getName(), user.getEmail());
 	}
 
 	@CrossOrigin(origins = "http://localhost:8080")
@@ -31,11 +31,5 @@ public class UserController {
 		userService.updateUser(user);
 
 	}
-
-//	@CrossOrigin(origins = "http://localhost:8080")
-//	@RequestMapping("/api/users/{id}")
-//	public User getUser(@PathVariable int id) {
-//		return userService.getUser(id);
-//	}
 
 }
