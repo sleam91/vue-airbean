@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-      <div class="invisibleFilm" :class="{ noDisplay : hideInvisibleFilm }"/>
+      <div class="invisibleFilm" :class="{ noDisplay : hideInvisibleFilm }" @click="hideBasket()"/>
       <top/>
       <shopping-basket-button v-on:basket-hidden="hideBasket()"
                               v-on:basket-visible="showBasket()"/>
