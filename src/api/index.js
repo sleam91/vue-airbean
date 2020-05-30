@@ -1,13 +1,13 @@
-const URL = 'http://localhost:8080/api'
+const URL = 'http://localhost:8081/api'
 
 async function getMenuItems() {
-    let response= await fetch(URL+'/menuitems')
+    let response = await fetch(URL + '/menuitems')
     let menu = await response.json()
     return menu
 }
 
-async function addOrderToUser(order,id){
-    await fetch(URL+'/users/'+id, {
+async function addOrderToUser(order, id) {
+    await fetch(URL + '/users/' + id, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -16,21 +16,23 @@ async function addOrderToUser(order,id){
     })
 }
 
-async function getHighestOrderNo(){
-    let highestOrderNo= await fetch(URL+'/orders/highest')
+async function getHighestOrderNo() {    
+    let response = await fetch(URL + '/orders/highest')
+    let highestOrderNo = await response.json()
     return highestOrderNo
 }
 
-async function loginUser(user){
-    let response= await fetch(URL+'/users',{
+
+async function loginUser(user) {
+    let response = await fetch(URL + '/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
     })
-    let user = await response.json()
-    return user
+    let loggedInUser = await response.json()
+    return loggedInUser
 }
 
-export default { getMenuItems, addOrderToUser,getHighestOrderNo,loginUser};
+export default { getMenuItems, addOrderToUser, getHighestOrderNo, loginUser };
