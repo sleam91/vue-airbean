@@ -46,8 +46,8 @@ export default {
     methods: {
         async makeOrder() {
             if (this.getSum > 0) {
-                this.$store.state.order.date = getTodaysFormattedDate(); //TODO convert to commit
-                this.$store.state.order.total = this.getSum; //TODO convert to commit
+                this.$store.state.order.date = getTodaysFormattedDate();
+                this.$store.state.order.total = this.getSum;
                 this.$store.state.order.eta=this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)+4
                 await this.$store.dispatch("addOrderToUser");
                 this.$store.state.hideInvisibleFilm = true;
@@ -56,7 +56,6 @@ export default {
         }
     },
     updated() {
-        console.log("saving data");
         sessionStorage.setItem("storeState", JSON.stringify(this.$store.state));
     },
     beforeCreate() {

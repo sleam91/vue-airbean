@@ -40,8 +40,6 @@ export default {
     },
     eta() {
       return this.$store.state.awaitedOrder.eta;
-      // return Math.floor(Math.random()*30)
-      //move to store
     }, 
   },
 }
