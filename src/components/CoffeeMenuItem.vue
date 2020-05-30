@@ -24,6 +24,7 @@ export default {
     methods: {
         addItem(menuItem) {
             this.$store.commit('addItemToBasket', menuItem)
+            sessionStorage.setItem("storeState", JSON.stringify(this.$store.state));
         }
     }
 }
