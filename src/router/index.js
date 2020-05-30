@@ -10,6 +10,7 @@ import About from '@/views/About'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '/', redirect: '/landing' },
   {
     path: '/landing',
     name: 'Landing',
@@ -25,7 +26,7 @@ const routes = [
     name: 'Menu',
     component: Menu,
     children: [{
-      path: 'cart',
+      path: '/cart',
       name: 'Cart',
       component: Cart
     }]

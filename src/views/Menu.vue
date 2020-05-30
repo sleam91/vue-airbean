@@ -47,7 +47,7 @@ export default {
       this.$store.commit('hideInvisibleFilm')
     },
     showBasket() {
-      this.$router.push('/menu/cart')
+      this.$router.push('/cart')
       this.$store.commit('showInvisibleFilm')
     }
   },
