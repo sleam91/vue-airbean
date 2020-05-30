@@ -15,10 +15,8 @@ public class UserService {
 		return userRepository.findById(id).orElse(null);
 	}
 
-	public User getUser(String name, String email) {
+	public User addOrGetUser(String name, String email) {
 		User user = userRepository.findByNameAndEmail(name, email).orElse(null);
-		if (user != null)
-			System.out.println(user.getId() + " " + user.getEmail() + " " + user.getName());
 		if (user == null) {
 			user = new User(name, email);
 			return addAndGetUser(user);
@@ -28,6 +26,7 @@ public class UserService {
 	}
 
 	public User addAndGetUser(User user) {
+		System.out.println("old user "+user.getId());
 		User addedUser = userRepository.save(user);
 		System.out.println("old user "+user.getId());
 		System.out.println("user from DB "+addedUser.getId());

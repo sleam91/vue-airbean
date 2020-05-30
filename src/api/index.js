@@ -16,14 +16,10 @@ async function addOrderToUser(order, id) {
     })
 }
 
-async function getHighestOrderNo() {
-    try {
-        let response = await fetch(URL + '/orders/highest')
-        let highestOrderNo=await response.json()
-        return highestOrderNo
-    } catch (error) {
-        return 9999;
-    }
+async function getHighestOrderNo() {    
+    let response = await fetch(URL + '/orders/highest')
+    let highestOrderNo = await response.json()
+    return highestOrderNo
 }
 
 
