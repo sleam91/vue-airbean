@@ -3,6 +3,8 @@ package airbean.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import airbean.model.Order;
+
 @Service
 public class OrderService {
 
@@ -17,6 +19,10 @@ public class OrderService {
 			orderNo = 9999;
 		}
 		return orderNo;
+	}
+
+	public void addOrderNoUser(Order order) {
+		orderRepository.save(order);
 	}
 
 }

@@ -89,6 +89,8 @@ export default new Vuex.Store({
       context.commit('addOrderToUser')
       if (context.state.loggedIn) {
         await API.addOrderToUser(context.state.order, context.state.user.id)
+      } else {
+        await API.addOrderNoUser(context.state.order)
       }
       context.commit('resetOrder')
     },
