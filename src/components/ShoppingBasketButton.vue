@@ -17,7 +17,9 @@ export default {
 
     methods: {
         showHideBasket() {
+            this.hideBasket = this.$store.state.hideInvisibleFilm
             this.hideBasket = !this.hideBasket
+            this.$store.state.hideInvisibleFilm = this.hideBasket
             if(this.hideBasket) {
                 this.$emit('basket-hidden')
             } else {

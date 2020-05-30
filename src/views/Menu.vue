@@ -56,7 +56,10 @@ export default {
       console.log('saving data');
       sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
-  }
+  },
+    beforeCreate() {
+        this.$store.state.hideInvisibleFilm = true
+    }
   
 }
 </script>

@@ -53,6 +53,7 @@ export default {
                 this.$store.state.order.date=getTodaysFormattedDate()//TODO convert to commit
                 this.$store.state.order.total = this.getSum//TODO convert to commit
                 await this.$store.dispatch('addOrderToUser')
+                this.$store.state.hideInvisibleFilm = true
                 this.$router.push('/status')
             }
         }
@@ -61,6 +62,9 @@ export default {
         console.log('saving data');
         sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
         
+    },
+    beforeCreate() {
+        this.$store.state.hideInvisibleFilm = false
     }
 
 }
