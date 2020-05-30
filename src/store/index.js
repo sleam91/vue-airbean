@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import API from '@/api'
-import API from '@/api/index(MOCK).js'
+import API from '@/api'
+// import API from '@/api/index(MOCK).js'
 
 Vue.use(Vuex)
 
