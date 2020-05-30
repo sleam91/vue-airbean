@@ -35,8 +35,8 @@ export default {
     Name: "LoginForm",
     data() {
         return {
-            name: "Sixten Kaffelövér",
-            email: "sixtenkaffelover@zocom.se",
+            name: "",
+            email: "",
             checked: false,
             noNameInput: false,
             noEmailInput: false,
