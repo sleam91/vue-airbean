@@ -26,7 +26,7 @@
 export default {
   name: 'Status',
   data: () => ({
-        numberTitle: "Ordernummer: #",
+        numberTitle: "Ordernummer ",
         title: "Din beställning är på väg!",
         titleEmpty: "Du har inte lagt din order än.",
         minutes: " minuter",
@@ -40,8 +40,6 @@ export default {
     },
     eta() {
       return this.$store.state.awaitedOrder.eta;
-      // return Math.floor(Math.random()*30)
-      //move to store
     }, 
   },
 }

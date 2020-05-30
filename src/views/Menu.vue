@@ -53,10 +53,12 @@ export default {
   },
 
   beforeUpdate() {
-      console.log('saving data');
       sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
-  }
+  },
+    beforeCreate() {
+        this.$store.state.hideInvisibleFilm = true
+    }
   
 }
 </script>
@@ -66,15 +68,20 @@ export default {
   display: none;
 }
 .menu {
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  height: 100vh;
   min-height: 53rem;
   background-color: #F3E4E1;
   .invisibleFilm{
     z-index: 5;
     position: absolute;
-    height: 54.8rem;
+    height: 100vh;
+    min-height: 53rem;
+    height: 100%;
     width: 100vw;
     background-color: rgba(0,0,0,0.5);
   }
@@ -91,6 +98,5 @@ export default {
 }
 .bottom {
   margin-top: 8rem;
-
 }  
 </style>
