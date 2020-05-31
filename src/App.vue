@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    created() {
+    async created() {
         if(sessionStorage.getItem('storeState')!==null) {
             this.$store.replaceState(JSON.parse(sessionStorage.getItem('storeState')))
         }

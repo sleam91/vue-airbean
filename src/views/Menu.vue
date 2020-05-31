@@ -56,9 +56,9 @@ export default {
       sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
   },
-    beforeCreate() {
-        this.$store.commit('hideInvisibleFilm')
-    }
+  beforeCreate() {
+      this.$store.commit('hideInvisibleFilm')
+  }
   
 }
 </script>
