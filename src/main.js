@@ -9,8 +9,7 @@ new Vue({
   router,
   store,
   async created(){
-    await this.$store.dispatch('getMenuItems')
-    await this.$store.dispatch('getHighestOrderNo')
+    await this.$store.dispatch('getInitialData')
   },
   render: h => h(App)
 }).$mount('#app')

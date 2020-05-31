@@ -1,5 +1,8 @@
 <template>
     <div id="app">
+        <div v-if="$store.state.loader" class="loader">
+                <img id="loader-icon" :src="require('@/assets/graphics/loader.png')" alt />
+        </div>
         <router-view />
     </div>
 </template>
@@ -16,8 +19,24 @@ export default {
 body {
     margin: 0;
     padding: 0;
-    #app{
-      width:100vw;
+    #app {
+        width: 100vw;
+        .loader {
+            z-index: 100;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            #loader-icon {
+                z-index: 101;
+                width: 8rem;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
 }
 </style>
