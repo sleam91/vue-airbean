@@ -29,7 +29,7 @@ export default {
     background: #f3e4e1;
     box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.6);
     padding: 2rem 2rem;
-    margin: -1.5rem 1rem 1.5rem;
+    margin: -1rem 1rem 1.5rem;
     max-width: 480px;
     display: flex;
     flex-direction: column;

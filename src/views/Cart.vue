@@ -46,11 +46,11 @@ export default {
     methods: {
         async makeOrder() {
             if (this.getSum > 0) {
-                this.$store.state.order.date = getTodaysFormattedDate();
-                this.$store.state.order.total = this.getSum;
-                this.$store.state.order.eta=this.$store.state.order.items.map(item => item.amount).reduce((a,b) => a+b, 0)+4
+                this.$store.commit('setOrderDate',getTodaysFormattedDate())
+                this.$store.commit('setOrderTotal',this.getSum)
+                this.$store.commit('setOrderEta',this.$store.getters.getAmountOfItems+4)
                 await this.$store.dispatch("addOrderToUser");
-                this.$store.state.hideInvisibleFilm = true;
+                this.$store.commit('hideInvisibleFilm')
                 this.$router.push("/status");
             }
         }
@@ -59,7 +59,7 @@ export default {
         sessionStorage.setItem("storeState", JSON.stringify(this.$store.state));
     },
     beforeCreate() {
-        this.$store.state.hideInvisibleFilm = false;
+        this.$store.commit('showInvisibleFilm')
     }
 };
 </script>

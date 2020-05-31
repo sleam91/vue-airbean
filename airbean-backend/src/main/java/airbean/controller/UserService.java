@@ -26,10 +26,7 @@ public class UserService {
 	}
 
 	public User addAndGetUser(User user) {
-		System.out.println("old user "+user.getId());
 		User addedUser = userRepository.save(user);
-		System.out.println("old user "+user.getId());
-		System.out.println("user from DB "+addedUser.getId());
 		return addedUser;
 
 	}
