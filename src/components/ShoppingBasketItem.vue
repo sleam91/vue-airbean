@@ -27,11 +27,6 @@ export default {
             this.$store.commit('removeItemfromBasket', item)
         }
     },
-    computed: {
-        ammountOf() {
-            return this.$store.state.order.items.filter(item => item.item.id == this.orderItem.item.id).length
-        }
-    }
 }
 </script>
 

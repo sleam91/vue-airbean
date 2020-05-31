@@ -16,6 +16,17 @@ async function addOrderToUser(order, id) {
     })
 }
 
+async function addOrderNoUser(order) {
+    await fetch(URL + '/orders/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+}
+
+
 async function getHighestOrderNo() {    
     let response = await fetch(URL + '/orders/highest')
     let highestOrderNo = await response.json()
@@ -35,4 +46,4 @@ async function loginUser(user) {
     return loggedInUser
 }
 
-export default { getMenuItems, addOrderToUser, getHighestOrderNo, loginUser };
+export default { getMenuItems, addOrderToUser, addOrderNoUser , getHighestOrderNo, loginUser};

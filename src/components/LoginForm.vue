@@ -35,8 +35,8 @@ export default {
     Name: "LoginForm",
     data() {
         return {
-            name: "Sixten Kaffelövér",
-            email: "sixtenkaffelover@zocom.se",
+            name: "",
+            email: "",
             checked: false,
             noNameInput: false,
             noEmailInput: false,
@@ -49,10 +49,11 @@ export default {
             this.noEmailInput = false;
             this.noGPDRChecked = false;
             if (this.name && this.email && this.checked) {
-                this.$store.state.user.name = this.name;
-                this.$store.state.user.email = this.email;
+                this.$store.commit("setNameAndEmail", {
+                    name: this.name,
+                    email: this.email
+                });
                 await this.$store.dispatch("loginUser", this.$store.state.user);
-                this.$store.state.loggedIn = true;
             } else {
                 if (!this.name) {
                     this.noNameInput = true;

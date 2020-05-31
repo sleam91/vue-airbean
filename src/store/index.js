@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import API from '@/api'
-import API from '@/api/index(MOCK).js'
+import API from '@/api'
 
 Vue.use(Vuex)
 
@@ -25,6 +24,11 @@ export default new Vuex.Store({
     },
     menu: [],
     loggedIn: false,
+  },
+  getters: {
+    getAmountOfItems: state => {
+      return state.order.items.map(item => item.amount).reduce((a, b) => a + b, 0)
+    }
   },
 
   mutations: {
@@ -77,9 +81,32 @@ export default new Vuex.Store({
     setHighestOrderNo(state, highestOrderNo) {
       state.highestOrderNo = highestOrderNo
     },
+    setNameAndEmail(state, loginData) {
+      state.user.name = loginData.name;
+      state.user.email = loginData.email;
+
+    },
     loginUser(state, user) {
       state.user = user
       state.loggedIn = true
+    },
+    showInvisibleFilm(state) {
+      state.hideInvisibleFilm = false;
+    },
+    hideInvisibleFilm(state) {
+      state.hideInvisibleFilm = true;
+    },
+    updateInvisibleFilm(state, value) {
+      state.hideInvisibleFilm = value
+    },
+    setOrderDate(state, date) {
+      state.order.date = date
+    },
+    setOrderTotal(state, total) {
+      state.order.total = total
+    },
+    setOrderEta(state, eta) {
+      state.order.eta = eta
     }
   },
 
@@ -89,6 +116,8 @@ export default new Vuex.Store({
       context.commit('addOrderToUser')
       if (context.state.loggedIn) {
         await API.addOrderToUser(context.state.order, context.state.user.id)
+      } else {
+        await API.addOrderNoUser(context.state.order)
       }
       context.commit('resetOrder')
     },
