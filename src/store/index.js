@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    loader:false,
     highestOrderNo: 0,
     awaitedOrder: {},
     hideInvisibleFilm: true,
@@ -114,11 +115,13 @@ export default new Vuex.Store({
 
     async addOrderToUser(context) {
       context.commit('addOrderToUser')
+      context.state.loader=true
       if (context.state.loggedIn) {
         await API.addOrderToUser(context.state.order, context.state.user.id)
       } else {
         await API.addOrderNoUser(context.state.order)
       }
+      context.state.loader=false
       context.commit('resetOrder')
     },
 
@@ -134,8 +137,16 @@ export default new Vuex.Store({
     },
 
     async loginUser(context, user) {
+      context.state.loader=true
       const userFromAPI = await API.loginUser(user)
+      context.state.loader=false
       context.commit('loginUser', userFromAPI)
+    },
+    async getInitialData(context){
+      context.state.loader=true
+      await context.dispatch('getMenuItems')
+      await context.dispatch('getHighestOrderNo')
+      context.state.loader=false
     }
 
   },
