@@ -10,7 +10,7 @@
       <h1 v-if="eta">{{title}}</h1>
       <h1 v-else>{{titleEmpty}}</h1>
       <div v-if="eta" class="eta">
-        <h5 class="bold">{{eta}}</h5>
+        <h5 class="bold" :class="{ doNothing : silly}">{{eta}}</h5>
         <h5>{{minutes}}</h5>
       </div>
       <router-link to="/menu">
@@ -32,16 +32,22 @@ export default {
         minutes: " minuter",
         btn: "Ok, cool!",
         btnEmpty: "Jag vill beställa!",
-
   }),
   computed: {
     orderNo() {
       return this.$store.state.awaitedOrder.orderNo;
     },
     eta() {
-      return this.$store.state.awaitedOrder.eta;
+      return this.$store.getters.timeToDeliver;
     }, 
+    silly() {
+      return this.$store.state.uppdateEta
+    }
   },
+  mounted() {
+      this.$store.dispatch('changeEta')
+  }
+  
 }
 </script>
 

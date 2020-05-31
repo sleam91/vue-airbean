@@ -24,10 +24,25 @@ export default new Vuex.Store({
     },
     menu: [],
     loggedIn: false,
+    uppdateEta: true
   },
   getters: {
     getAmountOfItems: state => {
       return state.order.items.map(item => item.amount).reduce((a, b) => a + b, 0)
+    },
+    timeToDeliver: state => {
+      let time =  state.awaitedOrder.deliveryTime - Date.now()
+      if(time < 0) {
+        return "0:00"
+      }
+      let minutes = Math.floor(time/60000)
+      
+      let seconds = Math.floor((time - minutes*60000)/1000)
+      if(seconds<10) {
+        return `${minutes}:0${seconds}`
+      } else {
+      return `${minutes}:${seconds}`
+      }
     }
   },
 
@@ -67,6 +82,7 @@ export default new Vuex.Store({
     },
     resetOrder(state) {
       state.awaitedOrder = state.order
+      state.awaitedOrder.deliveryTime = Date.now() + state.awaitedOrder.eta * 60 * 1000
       state.order = {
         orderNo: state.getHighestOrderNo,
         date: "",
@@ -107,6 +123,11 @@ export default new Vuex.Store({
     },
     setOrderEta(state, eta) {
       state.order.eta = eta
+    },
+    uppdateEta(state) {
+      state.uppdateEta = !state.uppdateEta
+      console.log('changing eta');
+      
     }
   },
 
@@ -136,6 +157,11 @@ export default new Vuex.Store({
     async loginUser(context, user) {
       const userFromAPI = await API.loginUser(user)
       context.commit('loginUser', userFromAPI)
+    },
+    async changeEta(context) {
+      console.log('updating eta');
+      setInterval(() => {context.commit('uppdateEta')}, 500 )
+      console.log('updated eta');
     }
 
   },
