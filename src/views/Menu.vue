@@ -56,10 +56,17 @@ export default {
       sessionStorage.setItem('storeState',JSON.stringify(this.$store.state))
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
   },
-    beforeCreate() {
+  beforeCreate() {
+      if(this.$route.name==='Menu'){
+         this.$store.commit('hideInvisibleFilm')
+      }
+  },
+  beforeRouteUpdate (to, from, next) {
+      if(to.name==='Menu'){
         this.$store.commit('hideInvisibleFilm')
-    }
-  
+      }
+      next()  
+  }
 }
 </script>
 
