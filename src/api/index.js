@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8081/api'
+const URL=document.location.protocol+'//'+document.location.host+'/api'
 
 async function getMenuItems() {
     let response = await fetch(URL + '/menuitems')
