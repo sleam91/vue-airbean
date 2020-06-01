@@ -122,6 +122,7 @@ export default new Vuex.Store({
       let time =  state.awaitedOrder.deliveryTime - Date.now()
       if(time <= 0) {
         state.timeToDeliver = "0:00"
+        state.awaitedOrder.eta = 0
       } else {
         let minutes = Math.floor(time/60000)
         let seconds = Math.floor((time - minutes*60000)/1000)
@@ -167,7 +168,8 @@ export default new Vuex.Store({
     },
 
     async startChangingEta(context) {
-      setInterval(() => {context.commit('uppdateEta')}, 500 )
+      context.commit('uppdateEta')
+      setInterval(() => {context.commit('uppdateEta')}, 1000 )
     },
     
     async getInitialData(context){
