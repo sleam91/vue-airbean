@@ -6,8 +6,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    timeToDeliver: 0,
+    loader:false,
     highestOrderNo: 0,
-    awaitedOrder: {},
+    awaitedOrder: {
+      orderNo: 1,
+      date: "",
+      items: [],
+      eta: 0,
+      total: "",
+      deliveryTime: 0
+    },
     hideInvisibleFilm: true,
     order: {
       orderNo: 1,
@@ -23,7 +32,7 @@ export default new Vuex.Store({
       listOfOrders: [],
     },
     menu: [],
-    loggedIn: false,
+    loggedIn: false
   },
   getters: {
     getAmountOfItems: state => {
@@ -67,11 +76,12 @@ export default new Vuex.Store({
     },
     resetOrder(state) {
       state.awaitedOrder = state.order
+      state.awaitedOrder.deliveryTime = Date.now() + state.awaitedOrder.eta * 60 * 1000 + 1000
       state.order = {
         orderNo: state.getHighestOrderNo,
         date: "",
         items: [],
-        eta: state.awaitedOrder.eta,
+        eta: 0,
         total: "",
       }
     },
@@ -107,6 +117,21 @@ export default new Vuex.Store({
     },
     setOrderEta(state, eta) {
       state.order.eta = eta
+    },
+    uppdateEta(state) {
+      let time =  state.awaitedOrder.deliveryTime - Date.now()
+      if(time <= 0) {
+        state.timeToDeliver = "0:00"
+        state.awaitedOrder.eta = 0
+      } else {
+        let minutes = Math.floor(time/60000)
+        let seconds = Math.floor((time - minutes*60000)/1000)
+        if(seconds<10) {
+          state.timeToDeliver = `${minutes}:0${seconds}`
+        } else {
+          state.timeToDeliver = `${minutes}:${seconds}`
+        }
+      }
     }
   },
 
@@ -114,11 +139,13 @@ export default new Vuex.Store({
 
     async addOrderToUser(context) {
       context.commit('addOrderToUser')
+      context.state.loader=true
       if (context.state.loggedIn) {
         await API.addOrderToUser(context.state.order, context.state.user.id)
       } else {
         await API.addOrderNoUser(context.state.order)
       }
+      context.state.loader=false
       context.commit('resetOrder')
     },
 
@@ -134,10 +161,23 @@ export default new Vuex.Store({
     },
 
     async loginUser(context, user) {
+      context.state.loader=true
       const userFromAPI = await API.loginUser(user)
+      context.state.loader=false
       context.commit('loginUser', userFromAPI)
-    }
+    },
 
+    async startChangingEta(context) {
+      context.commit('uppdateEta')
+      setInterval(() => {context.commit('uppdateEta')}, 1000 )
+    },
+    
+    async getInitialData(context){
+      context.state.loader=true
+      await context.dispatch('getMenuItems')
+      await context.dispatch('getHighestOrderNo')
+      context.state.loader=false
+    }
   },
 
   modules: {
