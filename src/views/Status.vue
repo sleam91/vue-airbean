@@ -42,6 +42,12 @@ export default {
       return this.$store.state.awaitedOrder.eta;
     }, 
   },
+  beforeRouteLeave (to, from, next) {    
+    if(to.name==='Cart'){
+      this.$store.commit('showInvisibleFilm')
+    }
+    next()  
+  }
 }
 </script>
 
