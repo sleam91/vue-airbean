@@ -64,6 +64,8 @@ export default {
   beforeRouteUpdate (to, from, next) {
       if(to.name==='Menu'){
         this.$store.commit('hideInvisibleFilm')
+      } else if (to.name==='Cart') {
+        this.$store.commit('showInvisibleFilm')
       }
       next()  
   }

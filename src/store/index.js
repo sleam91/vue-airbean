@@ -167,7 +167,7 @@ export default new Vuex.Store({
     },
 
     async startChangingEta(context) {
-      setInterval(() => {context.commit('uppdateEta')}, 500 )
+      setInterval(() => {context.commit('uppdateEta')}, 1000 )
     },
     
     async getInitialData(context){
