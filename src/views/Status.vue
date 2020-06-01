@@ -48,7 +48,7 @@ export default {
     if(this.eta) {
       this.$store.dispatch('startChangingEta')
     }
-  }
+  },
   beforeRouteLeave (to, from, next) {    
     if(to.name==='Cart'){
       this.$store.commit('showInvisibleFilm')
