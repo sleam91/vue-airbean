@@ -50,6 +50,7 @@ export default {
                 this.$store.commit('setOrderTotal',this.getSum)
                 this.$store.commit('setOrderEta',this.$store.getters.getAmountOfItems+4)
                 await this.$store.dispatch("addOrderToUser");
+                this.$store.dispatch('startChangingEta')
                 this.$store.commit('hideInvisibleFilm')
                 this.$router.push("/status");
             }
