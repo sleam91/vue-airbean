@@ -57,9 +57,16 @@ export default {
       this.hideInvisibleFilm = this.$store.state.hideInvisibleFilm
   },
   beforeCreate() {
-      this.$store.commit('hideInvisibleFilm')
+      if(this.$route.name==='Menu'){
+         this.$store.commit('hideInvisibleFilm')
+      }
+  },
+  beforeRouteUpdate (to, from, next) {
+      if(to.name==='Menu'){
+        this.$store.commit('hideInvisibleFilm')
+      }
+      next()  
   }
-  
 }
 </script>
 
